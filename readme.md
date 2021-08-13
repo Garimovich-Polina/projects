@@ -7,14 +7,17 @@
 
 #### 1. Верстка лендинга с адаптивом 
 ["Евклид Проектные системы"](http://project-euclid.tmweb.ru/)
+
 ![](https://github.com/Garimovich-Polina/projects/blob/master/extra_resources/euclid.png?raw=true)
 
 #### 2. Верстка лендинга с адаптивом (Bootstrap)
 ["Курсы 3D моделирования"](http://project-courses.tmweb.ru/)
+
 ![](https://github.com/Garimovich-Polina/projects/blob/master/extra_resources/courses.png?raw=true)
 
 #### 2. Верстка лендинга без адаптива
 ["Lagoona Сеть отелей"](http://project-lagoona.tmweb.ru/)
+
 ![](https://github.com/Garimovich-Polina/projects/blob/master/extra_resources/lagoona.png?raw=true)
 
 В данных работах были использованы и реализованы:  

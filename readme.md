@@ -15,7 +15,7 @@
 
 ![](https://github.com/Garimovich-Polina/projects/blob/master/extra_resources/courses.png?raw=true)
 
-#### 2. Верстка лендинга без адаптива
+#### 3. Верстка лендинга без адаптива
 ["Lagoona Сеть отелей"](http://project-lagoona.tmweb.ru/)
 
 ![](https://github.com/Garimovich-Polina/projects/blob/master/extra_resources/lagoona.png?raw=true)

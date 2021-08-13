@@ -1,6 +1,10 @@
 ## Кастомизация интерактивных элементов
 
-Кастомизация элементов по макету 
+### Кастомизация элементов по макету 
+
+![](https://github.com/Garimovich-Polina/projects/blob/master/extra_resources/castom.png?raw=true)
+![](https://github.com/Garimovich-Polina/projects/blob/master/extra_resources/castom2.png?raw=true)
+
 
 Задачи:
 + кастомный чекбокс

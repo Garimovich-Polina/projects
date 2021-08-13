@@ -1,6 +1,6 @@
 ## Skillbox Курсы 3D моделирования
 
-Верстка лендинка с использованием библиотеки Bootstrap 4 по макету из Figma
+### Верстка лендинка с использованием библиотеки Bootstrap 4 по ["макету"](https://www.figma.com/file/XcTODVidhd3EluCFERLdHB/%D0%A1%D0%B5%D1%82%D0%BA%D0%B8_%D0%94%D0%97-Copy) из Figma
 
 Задачи:
 + семантическая верстка

@@ -4,9 +4,9 @@
 Здесь собраны проекты, над которыми я работала в ходе обучения на курсах. Верстка сайтов по макетам из Figma с решение поставленных задач. 
 
 #### Верстка лендинга с адаптивом 
-["Евклид"](http://project-euclid.tmweb.ru/)
+["Евклид Проектные системы"](http://project-euclid.tmweb.ru/)
 
-![Лендинг "Евклид"](https://drive.google.com/file/d/1tl0rxQH7_uhEjLr1cO2Xs-DYVLJ0zDFG/view?usp=sharing "Евклид Проектные системы")
+![](https://drive.google.com/file/d/1tl0rxQH7_uhEjLr1cO2Xs-DYVLJ0zDFG/view?usp=sharing )
 
 В данных работах были использованы и реализованы:  
 

@@ -1,6 +1,6 @@
 ## Lagoona сеть отелей
 
-### Верстка лендинга без адаптива по макету ["макету"](https://www.figma.com/file/qAIovKBnSxsuI4652EwNA5/Lagoona-1) из Figma
+### Верстка лендинга без адаптива по макету [макету](https://www.figma.com/file/qAIovKBnSxsuI4652EwNA5/Lagoona-1) из Figma
 
 Задачи: 
 + семантическая верстка
@@ -11,4 +11,4 @@
 + переполнение блоков контентом не приводит к нарушению сетки
 + реализация :hover для интерактивных элементов 
 
-["Lagoona Сеть отелей"](http://project-lagoona.tmweb.ru/)
+[http://project-lagoona.tmweb.ru/](http://project-lagoona.tmweb.ru/)

@@ -6,7 +6,7 @@
 #### Верстка лендинга с адаптивом 
 ["Евклид Проектные системы"](http://project-euclid.tmweb.ru/)
 
-![](https://drive.google.com/file/d/1tl0rxQH7_uhEjLr1cO2Xs-DYVLJ0zDFG/view?usp=sharing )
+![](https://github.com/Garimovich-Polina/projects/blob/master/extra_resources/euclid.png?raw=true)
 
 В данных работах были использованы и реализованы:  
 

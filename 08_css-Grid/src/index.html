@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GRID</title>
+  <link rel="stylesheet" href="css/main.min.css" type="text/css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__container container">
+        <a href="" class="header__logo">
+          <img class="header__img-logo" src="./img/logo.png" alt="Логотип студии High pass">
+        </a>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="">О студии</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="">Наши проекты</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="">Услуги</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="">Мастер-классы</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="header__menu" aria-label="Меню">
+          <span class="header__menu-burger header__menu-burger_top"></span>
+          <span class="header__menu-burger"></span>
+          <span class="header__menu-burger header__menu-burger_bottom"></span>
+        </button>
+        <ul class="header__social-list">
+          <li class="header__social-item social-item">
+            <a href="" class="header__social-link">
+              <svg class="header__social-svg svg">
+                <use xlink:href="img/sprite.svg#inst"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="header__social-item social-item">
+            <a href="" class="header__social-link">
+              <svg class="header__social-svg svg">
+                <use xlink:href="img/sprite.svg#fb"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="header__social-item social-item">
+            <a href="" class="header__social-link">
+              <svg class="header__social-svg svg">
+                <use xlink:href="img/sprite.svg#vk"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <div class="header__search search">
+          <button class="search__btn">
+            <svg class="search__svg">
+              <use xlink:href="img/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-hero hero">
+        <div class="hero__container container">
+          <article class="hero-mklass">
+            <div class="hero-mklass__hashtag">#мастеркласс</div>
+            <div class="hero-mklass__content">
+              <p class="hero-mklass__artist">Мастер-класс от Игоря Робова</p>
+              <h3 class="hero-mklass__title">Неоновый фотосет 2.0 <br> 7 июля 20:00</h3>
+              <button class="hero-mklass__btn btn btn-condition">Узнать больше</button>
+            </div>
+          </article>
+          <div class="hero-projects mk-projects">
+            <h3 class="mk-projects__title">Работы участников предыдущего мастер-класса</h3>
+            <ul class="mk-projects__list">
+              <li class="mk-projects__item mk-projects__item_big">
+                <picture class="">
+                  <source media="(min-width: 1201px)" srcset="./img/hero/002.jpg">
+                  <source media="(min-width: 800px)" srcset="./img/hero/002_1200.jpg">
+                  <source media="(min-width: 631px)" srcset="./img/hero/002_768.jpg">
+                  <source media="(max-width: 630px)" srcset="./img/hero/002_320_2.jpg">
+                  <img src="./img/hero/002.jpg" alt="Работа участника мастер-класса">
+                </picture>
+              </li>
+              <li class="mk-projects__item">
+                <picture class="">
+                  <source media="(min-width: 1201px)" srcset="./img/hero/003.jpg">
+                  <source media="(min-width: 800px)" srcset="./img/hero/003_1200.jpg">
+                  <source media="(min-width: 631px)" srcset="./img/hero/003_768.jpg">
+                  <source media="(max-width: 630px)" srcset="./img/hero/003_320_2.jpg">
+                  <img src="./img/hero/003.jpg" alt="Работа участника мастер-класса">
+                </picture>
+              </li>
+              <li class="mk-projects__item">
+                <picture class="">
+                  <source media="(min-width: 1201px)" srcset="./img/hero/004.jpg">
+                  <source media="(min-width: 800px)" srcset="./img/hero/004_1200.jpg">
+                  <source media="(min-width: 631px)" srcset="./img/hero/004_768.jpg">
+                  <source media="(max-width: 630px)" srcset="./img/hero/004_320_2.jpg">
+                  <img src="./img/hero/004.jpg" alt="Работа участника мастер-класса">
+                </picture>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-about about">
+        <div class="about__container container">
+          <h2 class="about__title heading">О студии</h2>
+          <div class="about__wrapper">
+            <div class="about__text">
+              <p class="about__desc">В рамках спецификации современных стандартов, интерактивные прототипы, инициированные исключительно синтетически, ограничены исключительно образом мышления. Предварительные выводы неутешительны: высокотехнологичная концепция общественного уклада требует от нас анализа соответствующих условий активизации! Следует отметить, что семантический разбор внешних противодействий  фиксирует необходимость распределения внутренних резервов и ресурсов. Безусловно, граница обучения кадров предоставляет широкие возможности для первоочередных требований. Повседневная практика показывает, что глубокий уровень погружения предполагает независимые способы реализации новых принципов формирования <br class="br_1024"> материально-технической и кадровой базы. Приятно, граждане, наблюдать, как явные признаки институционализации являются только методом политического участия и нарушающими общечеловеческие нормы этики.</p>
+            </div>
+            <div class="about__newsletter-wrapper">
+              <span class="about__newsletter-img"></span>
+              <div class="about__newsletter newsletter">
+                <h3 class="newsletter__title">Подписаться на рассылку</h3>
+                <form class="newsletter__form" action="" method="POST">
+                  <label for="email">
+                    <input class="newsletter__form-input input" id="email" required type="email" placeholder="E-mail">
+                  </label>
+                  <button class="newsletter__form-btn btn btn-condition" type="submit">Отправить</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-projects projects">
+        <div class="projects__container container">
+          <h2 class="projects__title heading">Наши проекты</h2>
+        <ul class="projects__list">
+          <li class="projects__item projects__item_1">
+            <div class="projects__hashtag">#пейзаж</div>
+            <div class="projects__item-img projects__item-img_1"></div>
+            <a class="projects__item-link projects__item-link_1920" href="">
+              <p class="projects__item-desc projects__item-desc_1920">Синтетически, смешаны с не уникальными данными до степени...</p>
+            </a>
+            <a class="projects__item-link_1024" href="">
+              <p class="projects__item-desc_1024">Синтетически, смешаны с не уникальными...</p>
+            </a>
+            <div class="projects__item-date">16 июня</div>
+          </li>
+          <li class="projects__item projects__item_2">
+            <div class="projects__hashtag">#портрет</div>
+            <div class="projects__item-img projects__item-img_2"></div>
+            <a class="projects__item-link projects__item-link_1920" href="">
+              <p class="projects__item-desc projects__item-desc_1920">В своём стремлении улучшить опыт мы упускаем, что явные...</p>
+            </a>
+            <a class="projects__item-link_1024" href="">
+              <p class="projects__item-desc_1024">В своём стремлении улучшить опыт мы...</p>
+            </a>
+            <div class="projects__item-date">28 мая</div>
+          </li>
+          <li class="projects__item projects__item_3">
+            <div class="projects__hashtag">#предмет</div>
+            <div class="projects__item-img projects__item-img_3"></div>
+            <a class="projects__item-link projects__item-link_1920" href="">
+              <p class="projects__item-desc projects__item-desc_1920">Равным образом, высокое качество позиционных...</p>
+            </a>
+            <a class="projects__item-link_1024" href="">
+              <p class="projects__item-desc_1024">Равным образом, высокое качество позиционных высокотехнологичная концепция общественного уклада</p>
+            </a>
+            <div class="projects__item-date">14 мая</div>
+          </li>
+          <li class="projects__item projects__item_big projects__item_4">
+            <article class="projects__article article article-1">
+              <div class="projects__hashtag article__hashtag">#fuji</div>
+              <div class="article__content">
+                <div class="article__date">9 апреля</div>
+                <h3 class="article__title">Cемантический разбор</h3>
+                <p class="article__desc">В рамках спецификации современных стандартов, интерактивные прототипы</p>
+                <button class="article__btn btn">О проекте</button>
+              </div>
+            </article>
+          </li>
+          <li class="projects__item projects__item_big projects__item_big-2 projects__item_5">
+            <article class="projects__article article article-2">
+              <div class="article__hashtag projects__hashtag">#проектзабвение</div>
+              <div class="article__content">
+                <div class="article__date">20 марта</div>
+                <h3 class="article__title">Забвение</h3>
+                <p class="article__desc">Играет важную роль в формировании глубокомысленных рассуждений</p>
+                <button class="article__btn article__btn_2 btn">О проекте</button>
+              </div>
+            </article>
+          </li>
+          <li class="projects__item projects__item_6">
+            <div class="projects__hashtag">#ретушь</div>
+            <div class="projects__item-img projects__item-img_6"></div>
+            <a class="projects__item-link" href="">
+              <p class="projects__item-desc">Как принято считать, многие известные личности и по сей день остаются уделом либералов...</p>
+            </a>
+            <div class="projects__item-date">9 марта</div>
+          </li>
+          <li class="projects__item projects__item_7">
+            <div class="projects__hashtag">#портрет</div>
+            <div class="projects__item-img projects__item-img_7"></div>
+            <a class="projects__item-link" href="">
+              <p class="projects__item-desc">С учётом сложившейся международной обстановки, новая модель организационной...</p>
+            </a>
+            <div class="projects__item-date">1 марта</div>
+          </li>
+        </ul>
+        </div>
+      </section>
+
+      <section class="section-contacts contacts">
+        <div class="contacts__container container">
+          <h2 class="contacts__title heading">Контакты</h2>
+          <div class="contacts__wrapper">
+            <div class="map contacts__map" id="map">
+              <div class="map__wrapper-info">
+                <button class="map__info-close">
+                  <svg class="map__svg">
+                    <use xlink:href="img/sprite.svg#close"></use>
+                  </svg>
+                </button>
+                <div class="map__info">
+                  <h3 class="map__title">Студия “High pass”</h3>
+                  <address class="map__address">107045, Москва, Даев переулок, дом 41, бизнес-центр «Даев&nbsp;Плаза», этаж 8, офис&nbsp;№&nbsp;82</address>
+                  <a class="map__tel" href="tel:+749542423532">
+                    <svg class="map__tel-svg">
+                      <use xlink:href="img/sprite.svg#call"></use>
+                    </svg>
+                    +7&nbsp;(495)&nbsp;42-423-532
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="contacts__content form">
+              <h3 class="form__subtitle">Оставить заявку</h3>
+              <p class="form__desc">Оставьте ваши данные, указав в графе “Комментарий” желаемые время и дату съемки или другого мероприятия</p>
+              <form class="form__form" action="" method="POST">
+                <div class="form__form-wrapper">
+                  <label for="name">
+                    <input class="form__input input" id="name" required type="text" placeholder="Имя">
+                  </label>
+                  <label for="email2">
+                    <input class="form__input input" id="email2" required type="email" placeholder="E-mail">
+                  </label>
+                  <label for="messeg">
+                    <textarea class="form__input form__input-messeg input" name="message" id="messeg" placeholder="Комментарий"></textarea>
+                  </label>
+                </div>
+                <button class="form__btn btn btn-condition" type="submit">Отправить</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container container">
+        <div class="footer__logo">
+          <a class="footer__logo-link" href="">
+            <img class="footer__logo-img" src="./img/logo.png" alt="">
+          </a>
+          <p class="footer__logo-desc">Фотостудия High pass® 2018-2020</p>
+        </div>
+        <div class="footer__quote quote">
+          <p class="quote__text">
+            Которая из моих фотографий самая любимая? Та, которую я собираюсь снять завтра.
+          </p>
+          <span class="quote__name">© Имоджен Каннингем</span>
+        </div>
+        <div class="footer__social social">
+          <div class="social__desc">Больше интересного:</div>
+          <ul class="social__list">
+            <li class="social__item social-item">
+              <a href="" class="social__link">
+                <svg class="social__svg svg">
+                  <use xlink:href="img/sprite.svg#inst"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social__item social-item">
+              <a href="" class="social__link">
+                <svg class="social__svg svg">
+                  <use xlink:href="img/sprite.svg#fb"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social__item social-item">
+              <a href="" class="social__link">
+                <svg class="social__svg svg">
+                  <use xlink:href="img/sprite.svg#vk"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+
+  <script src="js/main.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=&lang=ru_RU" type="text/javascript"></script>
+  <script type="text/javascript">
+    ymaps.ready(init);
+    function init(){
+        var myMap = new ymaps.Map("map", {
+            center: [55.76092113545594,37.61297029080195],
+            zoom: 13.4,
+            controls: []
+          });
+
+        var myPlacemark = new ymaps.Placemark([55.76953456898229,37.63998549999998], {}, {
+            iconLayout: 'default#image',
+            iconImageHref: './img/ellipse.svg',
+            iconImageSize: [12, 12],
+          });
+
+      myMap.geoObjects.add(myPlacemark);
+    }
+  </script>
+</body>
+</html>

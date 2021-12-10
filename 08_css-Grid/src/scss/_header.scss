@@ -4,16 +4,18 @@
 
   &__container {
     display: grid;
-    grid-template: 1fr / 1.5fr 5fr .9fr;
+    grid-template: 1fr / minmax(191px, 1fr) 5fr 130px;
     grid-template-areas: "header-logo header-nav header-social";
     column-gap: 20px;
     align-items: center;
     min-height: 80px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 
   &__logo {
     grid-area: header-logo;
-    &:focus {
+    &:focus-visible {
       outline: 1px solid $cOrange;
     }
   }
@@ -23,10 +25,16 @@
   }
 
   &__nav-list {
-    padding-left: 6.4%;
+    margin-left: 12.4%;
     display: grid;
-    grid-auto-flow: column;
-    column-gap: 3.6%;
+    grid-template: 1fr/ repeat(5, auto);
+    grid-auto-rows: 25px;
+    column-gap: .6%;
+    row-gap: 10px;
+  }
+
+  &__nav-item {
+    justify-self: start;
   }
 
   &__nav-link {
@@ -55,8 +63,9 @@
   &__social-list {
     display: grid;
     grid-area: header-social;
-    grid-auto-flow: column;
-    justify-items: end;
+    grid-template-columns: repeat(auto-fit, 30px);
+    grid-gap: 20px;
+    max-width: 130px;
     padding-top: 5px;
 
     .header__social-svg {
@@ -73,6 +82,10 @@
 .svg {
   fill: $cGrayLight;
   transition: fill .3s ease-in-out;
+}
+
+.svg path {
+  fill: $cGrayLight;
 }
 
 .social-item {
@@ -92,12 +105,18 @@
   display: none;
 }
 
+.menu {
+  display: none;
+}
+
 
 @media (max-width: 1200px) {
   .header {
     &__container {
+      position: relative;
+      grid-template: 1fr / minmax(167px, 1fr) 5fr 40px;
       grid-template-areas: "header-logo header-nav header__search";
-      column-gap: 17px;
+      column-gap: 0;
     }
 
     &__search {
@@ -111,7 +130,9 @@
     }
 
     &__nav-list {
-      padding-left: 6.1%;
+      grid-template: 1fr/ repeat(5, auto);
+      margin-left: 10.2%;
+      margin-right: 12.1%;
       column-gap: 0.5%;
     }
 
@@ -122,17 +143,108 @@
 
   .search {
     display: block;
+    position: relative;
+
+    &__wrapper{
+      position: absolute;
+      z-index: 30;
+      bottom: -45px;
+      right: 0;
+      padding-left: 3px;
+      height: 34px;
+      width: 343px;
+      visibility: hidden;
+      background-color: $cGrayDark;
+      transition: transform .3s ease-in-out;
+      transform: translateX(110%);
+    }
+
+    &__form {
+      height: 30px;
+    }
+
+    &__input {
+      width: 308px;
+      padding: 0;
+      font-family: $ffTT;
+      color: $cWhite;
+      font-size: 16px;
+      background-color: $cGrayDark;
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid $cInputLight;
+
+      &::placeholder {
+        font-family: $ffTT;
+        font-size: 16px;
+        color: $cWhite;
+      }
+    }
+
+    &__btn-close {
+      cursor: pointer;
+      display: inline-block;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+      transform: translateY(4px);
+
+      &-svg circle {
+        fill: #c4c4c4;
+      }
+
+      &:hover .search__btn-close-svg circle{
+        fill: $cOrangeDark;
+      }
+      &:active .search__btn-close-svg circle {
+        fill: $cOrangeDark;
+      }
+
+      &:active {
+        outline: none;
+      }
+
+      &-svg {
+        width: 23px;
+        height: 23px;
+
+        & circle {
+          transition: fill .3s ease-in-out;
+        }
+      }
+    }
 
     &__btn {
+      cursor: pointer;
       padding: 2px 0 0 0;
       background-color: transparent;
       border: none;
+
+      &:hover .search__svg {
+        fill: $cOrange;
+      }
+
+      &:focus-visible .search__svg{
+        outline: 1px solid $cOrange;
+      }
+
+      &:active .search__svg{
+        outline: none;
+        fill: $cOrangeDark;
+      }
     }
 
     &__svg {
       width: 25px;
       height: 25px;
+
     }
+  }
+
+  .search__wrapper_active {
+    // display: block;
+    transform: none;
+    visibility: visible;
   }
 }
 
@@ -145,7 +257,7 @@
       content: "";
       display: block;
       z-index: 1;
-      top: 80px;
+      top: 64%;
       bottom: 0;
       left: 0;
       right: 0;
@@ -155,6 +267,8 @@
     &__container {
       grid-template: minmax(80px, 1fr) minmax(45px, 0.5fr) / 1fr 1fr;
       grid-template-areas: "header-logo header__search" "header-nav header-nav";
+      padding-top: 0;
+      padding-bottom: 0;
     }
 
     &__nav {
@@ -167,8 +281,8 @@
     }
 
     &__nav-list {
-      padding-left: 0;
-      justify-content: space-between
+      justify-content: space-between;
+      margin: 0;
     }
   }
 }
@@ -180,6 +294,7 @@
 
   .header {
     &__container {
+      position: relative;
       grid-template: minmax(70px, 1fr) minmax(45px, 0.5fr) / 1fr 1fr;
       grid-template-areas: "header-logo header__search" "header__menu .";
     }
@@ -217,9 +332,110 @@
     }
   }
 
+  .menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    display: grid;
+    grid-template: 33px 1fr 20px / 1fr;
+    padding: 13px 21px 31.5px;
+    height: 80vh;
+    min-height: 430px;
+    visibility: hidden;
+    border-top: 1px solid #808080;
+    background-color: $cGrayDark;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-110%);
+
+    &__btn-close {
+      padding: 0;
+      width: 20px;
+      height: 20px;
+      background-color: transparent;
+      border: none;
+
+      &-svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    &__nav-item {
+      font-size: 16px;
+      line-height: 21px;
+      color: $cWhite;
+      margin-bottom: 30px;
+    }
+
+    &__tel {
+      position: relative;
+      margin-left: -2px;
+      padding-left: 19px;
+      color: $cOrange;
+      font-size: 14px;
+      line-height: 14px;
+
+      &-svg {
+        position: absolute;
+        left: 0;
+        bottom: 25%;
+        width: 20px;
+        height: 20px;
+        fill: $cOrange;
+      }
+    }
+  }
+
+  .menu_active {
+    transform: none;
+    visibility: visible;
+  }
+
   .search__svg {
     width: 20px;
     height: 20px;
+  }
+
+  .search {
+    position: static;
+
+    &__wrapper{
+      top: 0;
+      left: 0;
+      bottom: auto;
+      padding: 27px 21px 20px;
+      height: 70px;
+      width: 100%;
+    }
+
+    &__input {
+      width: 98%;
+      padding: 0;
+      font-size: 14px;
+
+      &::placeholder {
+        font-size: 14px;
+      }
+    }
+
+    &__form {
+      position: relative;
+      padding-right: 25px;
+    }
+
+    &__btn-close {
+      position: absolute;
+      right: 2px;
+      bottom: 50%;
+    }
+
+    &__btn-close-svg {
+      width: 18px;
+      height: 18px;
+    }
   }
 }
 

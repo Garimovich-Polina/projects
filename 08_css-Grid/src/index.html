@@ -5,9 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GRID</title>
   <link rel="stylesheet" href="css/main.min.css" type="text/css">
+
+  <link rel="preload" href="./fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/TTFirsNeue-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/TTFirsNeue-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/TTFirsNeue-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <script src="js/main.js"></script>
 </head>
 
 <body>
+  <h1 class="visually-hidden">Фотостудия High pass</h1>
+
   <div class="wrapper">
     <header class="header">
       <div class="header__container container">
@@ -33,11 +43,47 @@
             </li>
           </ul>
         </nav>
-        <button class="header__menu" aria-label="Меню">
+        <button id="menu" class="header__menu" aria-label="Меню">
           <span class="header__menu-burger header__menu-burger_top"></span>
           <span class="header__menu-burger"></span>
           <span class="header__menu-burger header__menu-burger_bottom"></span>
         </button>
+
+        <div id="menu-active" class="header__burger-menu menu">
+            <button id="menu-close" class="menu__btn-close" aria-label="Закрыть поиск">
+              <svg class="menu__btn-close-svg" width="23" height="23" viewbox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="11.5" cy="11.5" r="11.5" fill="#FF6E30"/>
+                <rect x="7.13818" y="6.32501" width="13.8" height="1.15" transform="rotate(45 7.13818 6.32501)" fill="white"/>
+                <rect x="6.42993" y="16.0832" width="13.8" height="1.15" transform="rotate(-45 6.42993 16.0832)" fill="white"/>
+                </svg>
+            </button>
+            <nav class="menu__nav">
+              <ul class="menu__nav-list">
+                <li class="menu__nav-item">
+                  <a class="menu__nav-link" href="">О студии</a>
+                </li>
+                <li class="menu__nav-item">
+                  <a class="menu__nav-link" href="">Наши проекты</a>
+                </li>
+                <li class="menu__nav-item">
+                  <a class="menu__nav-link" href="">Услуги</a>
+                </li>
+                <li class="menu__nav-item">
+                  <a class="menu__nav-link" href="">Мастер-классы</a>
+                </li>
+                <li class="menu__nav-item">
+                  <a class="menu__nav-link" href="">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+            <a class="menu__tel" href="tel:+749542423532">
+              <svg class="menu__tel-svg">
+                <use xlink:href="img/sprite.svg#call"></use>
+              </svg>
+              +7&nbsp;(495)&nbsp;42-423-532
+            </a>
+        </div>
+
         <ul class="header__social-list">
           <li class="header__social-item social-item">
             <a href="" class="header__social-link">
@@ -62,11 +108,24 @@
           </li>
         </ul>
         <div class="header__search search">
-          <button class="search__btn">
-            <svg class="search__svg">
+          <button id="search" class="search__btn" aria-label="Поиск">
+            <svg class="search__svg svg">
               <use xlink:href="img/sprite.svg#search"></use>
             </svg>
           </button>
+          <div id="search-active" class="search__wrapper">
+            <form class="search__form" action="#">
+              <label for="search"></label>
+              <input class="search__input" type="text" name="search" placeholder="Что будем иcкать?">
+              <button id="search-close" class="search__btn-close" type="button" aria-label="Закрыть поиск">
+                <svg class="search__btn-close-svg" width="23" height="23" viewbox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="11.5" cy="11.5" r="11.5" fill="#FF6E30"/>
+                  <rect x="7.13818" y="6.32501" width="13.8" height="1.15" transform="rotate(45 7.13818 6.32501)" fill="white"/>
+                  <rect x="6.42993" y="16.0832" width="13.8" height="1.15" transform="rotate(-45 6.42993 16.0832)" fill="white"/>
+                  </svg>
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </header>
@@ -78,12 +137,12 @@
             <div class="hero-mklass__hashtag">#мастеркласс</div>
             <div class="hero-mklass__content">
               <p class="hero-mklass__artist">Мастер-класс от Игоря Робова</p>
-              <h3 class="hero-mklass__title">Неоновый фотосет 2.0 <br> 7 июля 20:00</h3>
+              <h2 class="hero-mklass__title">Неоновый фотосет 2.0 <br> 7 июля 20:00</h2>
               <button class="hero-mklass__btn btn btn-condition">Узнать больше</button>
             </div>
           </article>
           <div class="hero-projects mk-projects">
-            <h3 class="mk-projects__title">Работы участников предыдущего мастер-класса</h3>
+            <h2 class="mk-projects__title">Работы участников предыдущего мастер-класса</h2>
             <ul class="mk-projects__list">
               <li class="mk-projects__item mk-projects__item_big">
                 <picture class="">
@@ -125,11 +184,10 @@
               <p class="about__desc">В рамках спецификации современных стандартов, интерактивные прототипы, инициированные исключительно синтетически, ограничены исключительно образом мышления. Предварительные выводы неутешительны: высокотехнологичная концепция общественного уклада требует от нас анализа соответствующих условий активизации! Следует отметить, что семантический разбор внешних противодействий  фиксирует необходимость распределения внутренних резервов и ресурсов. Безусловно, граница обучения кадров предоставляет широкие возможности для первоочередных требований. Повседневная практика показывает, что глубокий уровень погружения предполагает независимые способы реализации новых принципов формирования <br class="br_1024"> материально-технической и кадровой базы. Приятно, граждане, наблюдать, как явные признаки институционализации являются только методом политического участия и нарушающими общечеловеческие нормы этики.</p>
             </div>
             <div class="about__newsletter-wrapper">
-              <span class="about__newsletter-img"></span>
               <div class="about__newsletter newsletter">
                 <h3 class="newsletter__title">Подписаться на рассылку</h3>
-                <form class="newsletter__form" action="" method="POST">
-                  <label for="email">
+                <form id="form2" class="newsletter__form" action="#" method="POST">
+                  <label for="email" class="newsletter__form-label">
                     <input class="newsletter__form-input input" id="email" required type="email" placeholder="E-mail">
                   </label>
                   <button class="newsletter__form-btn btn btn-condition" type="submit">Отправить</button>
@@ -144,38 +202,41 @@
         <div class="projects__container container">
           <h2 class="projects__title heading">Наши проекты</h2>
         <ul class="projects__list">
-          <li class="projects__item projects__item_1">
+          <li class="projects__item projects__item_small projects__item_1">
             <div class="projects__hashtag">#пейзаж</div>
-            <div class="projects__item-img projects__item-img_1"></div>
-            <a class="projects__item-link projects__item-link_1920" href="">
-              <p class="projects__item-desc projects__item-desc_1920">Синтетически, смешаны с не уникальными данными до степени...</p>
-            </a>
-            <a class="projects__item-link_1024" href="">
-              <p class="projects__item-desc_1024">Синтетически, смешаны с не уникальными...</p>
-            </a>
-            <div class="projects__item-date">16 июня</div>
+            <div class="projects__item-content">
+              <a class="projects__item-link projects__item-link_1920" href="">
+                <p class="projects__item-desc projects__item-desc_1920">Синтетически, смешаны с не уникальными данными до степени...</p>
+              </a>
+              <a class="projects__item-link projects__item-link_1024" href="">
+                <p class="projects__item-desc projects__item-desc_1024">Синтетически, смешаны с не уникальными...</p>
+              </a>
+              <div class="projects__item-date">16 июня</div>
+            </div>
           </li>
-          <li class="projects__item projects__item_2">
+          <li class="projects__item projects__item_small projects__item_2">
             <div class="projects__hashtag">#портрет</div>
-            <div class="projects__item-img projects__item-img_2"></div>
-            <a class="projects__item-link projects__item-link_1920" href="">
-              <p class="projects__item-desc projects__item-desc_1920">В своём стремлении улучшить опыт мы упускаем, что явные...</p>
-            </a>
-            <a class="projects__item-link_1024" href="">
-              <p class="projects__item-desc_1024">В своём стремлении улучшить опыт мы...</p>
-            </a>
-            <div class="projects__item-date">28 мая</div>
+            <div class="projects__item-content">
+              <a class="projects__item-link projects__item-link_1920" href="">
+                <p class="projects__item-desc projects__item-desc_1920">В своём стремлении улучшить опыт мы упускаем, что явные...</p>
+              </a>
+              <a class="projects__item-link projects__item-link_1024" href="">
+                <p class="projects__item-desc projects__item-desc_1024">В своём стремлении улучшить опыт мы...</p>
+              </a>
+              <div class="projects__item-date">28 мая</div>
+            </div>
           </li>
-          <li class="projects__item projects__item_3">
+          <li class="projects__item projects__item_small projects__item_3">
             <div class="projects__hashtag">#предмет</div>
-            <div class="projects__item-img projects__item-img_3"></div>
+           <div class="projects__item-content">
             <a class="projects__item-link projects__item-link_1920" href="">
               <p class="projects__item-desc projects__item-desc_1920">Равным образом, высокое качество позиционных...</p>
             </a>
-            <a class="projects__item-link_1024" href="">
-              <p class="projects__item-desc_1024">Равным образом, высокое качество позиционных высокотехнологичная концепция общественного уклада</p>
+            <a class="projects__item-link projects__item-link_1024" href="">
+              <p class="projects__item-desc projects__item-desc_1024">Равным образом, высокое качество позиционных высокотехнологичная концепция общественного уклада</p>
             </a>
             <div class="projects__item-date">14 мая</div>
+           </div>
           </li>
           <li class="projects__item projects__item_big projects__item_4">
             <article class="projects__article article article-1">
@@ -199,21 +260,23 @@
               </div>
             </article>
           </li>
-          <li class="projects__item projects__item_6">
+          <li class="projects__item projects__item_medium projects__item_6">
             <div class="projects__hashtag">#ретушь</div>
-            <div class="projects__item-img projects__item-img_6"></div>
-            <a class="projects__item-link" href="">
-              <p class="projects__item-desc">Как принято считать, многие известные личности и по сей день остаются уделом либералов...</p>
-            </a>
-            <div class="projects__item-date">9 марта</div>
+            <div class="projects__item-content">
+              <a class="projects__item-link" href="">
+                <p class="projects__item-desc">Как принято считать, многие известные личности и по сей день остаются уделом либералов...</p>
+              </a>
+              <div class="projects__item-date">9 марта</div>
+            </div>
           </li>
-          <li class="projects__item projects__item_7">
+          <li class="projects__item projects__item_medium projects__item_7">
             <div class="projects__hashtag">#портрет</div>
-            <div class="projects__item-img projects__item-img_7"></div>
-            <a class="projects__item-link" href="">
-              <p class="projects__item-desc">С учётом сложившейся международной обстановки, новая модель организационной...</p>
-            </a>
-            <div class="projects__item-date">1 марта</div>
+            <div class="projects__item-content">
+              <a class="projects__item-link" href="">
+                <p class="projects__item-desc">С учётом сложившейся международной обстановки, новая модель организационной...</p>
+              </a>
+              <div class="projects__item-date">1 марта</div>
+            </div>
           </li>
         </ul>
         </div>
@@ -224,8 +287,8 @@
           <h2 class="contacts__title heading">Контакты</h2>
           <div class="contacts__wrapper">
             <div class="map contacts__map" id="map">
-              <div class="map__wrapper-info">
-                <button class="map__info-close">
+              <div id="map-info" class="map__wrapper-info">
+                <button id="map-close" class="map__info-close">
                   <svg class="map__svg">
                     <use xlink:href="img/sprite.svg#close"></use>
                   </svg>
@@ -245,15 +308,15 @@
             <div class="contacts__content form">
               <h3 class="form__subtitle">Оставить заявку</h3>
               <p class="form__desc">Оставьте ваши данные, указав в графе “Комментарий” желаемые время и дату съемки или другого мероприятия</p>
-              <form class="form__form" action="" method="POST">
+              <form id="form" class="form__form" action="#" method="POST" autocomplete="off">
                 <div class="form__form-wrapper">
-                  <label for="name">
-                    <input class="form__input input" id="name" required type="text" placeholder="Имя">
+                  <label class="form__label" for="name">
+                    <input class="form__input input" id="name" name="Имя" type="text" placeholder="Имя" pattern="[A-Za-zА-Яа-яЁё]">
                   </label>
-                  <label for="email2">
-                    <input class="form__input input" id="email2" required type="email" placeholder="E-mail">
+                  <label class="form__label" for="email2">
+                    <input class="form__input input" id="email2" type="email" name="email" placeholder="E-mail">
                   </label>
-                  <label for="messeg">
+                  <label class="form__label" for="messeg">
                     <textarea class="form__input form__input-messeg input" name="message" id="messeg" placeholder="Комментарий"></textarea>
                   </label>
                 </div>
@@ -309,10 +372,8 @@
     </footer>
   </div>
 
-
-  <script src="js/main.js"></script>
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=&lang=ru_RU" type="text/javascript"></script>
-  <script type="text/javascript">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=&lang=ru_RU"></script>
+  <script>
     ymaps.ready(init);
     function init(){
         var myMap = new ymaps.Map("map", {
@@ -329,6 +390,68 @@
 
       myMap.geoObjects.add(myPlacemark);
     }
+  </script>
+
+  <script src="https://unpkg.com/just-validate@2.0.0-beta.12/dist/just-validate.production.min.js"></script>
+  <script>
+    const validation = new JustValidate('#form',
+    {
+      errorLabelStyle: {
+          color: '#FF3030',
+        },
+    });
+
+    const validation2 = new JustValidate('#form2',
+    {
+      errorLabelStyle: {
+          color: '#FF3030',
+        },
+    });
+
+    validation2
+    .addField('#email', [
+      {
+        rule: 'required',
+        errorMessage: 'Поле обязательно для заполнения',
+      },
+      {
+        rule: 'email',
+        errorMessage: 'Электронная почта недействительна!',
+      },
+    ]);
+
+  validation
+    .addField('#name', [
+      {
+        rule: 'required',
+        errorMessage: 'Поле обязательно для заполнения',
+      },
+      {
+        rule: 'customRegexp',
+        value: (/^[A-Za-zА-Яа-яЁё_ ]*$/),
+        errorMessage: 'Недопустимый формат',
+      },
+      {
+        rule: 'minLength',
+        value: 3,
+        errorMessage: 'Минимальное количество символов – 3',
+      },
+      {
+        rule: 'maxLength',
+        value: 30,
+        errorMessage: 'Максимальное количество символов – 30',
+      },
+    ])
+    .addField('#email2', [
+      {
+        rule: 'required',
+        errorMessage: 'Поле обязательно для заполнения',
+      },
+      {
+        rule: 'email',
+        errorMessage: 'Электронная почта недействительна!',
+      },
+    ]);
   </script>
 </body>
 </html>

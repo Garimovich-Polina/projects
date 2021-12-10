@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+}
+*:focus-visible {
+  outline: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.btn {
+  display: block;
+  padding: 13px 20px;
+  cursor: pointer;
+  font-family: $ffR;
+  font-size: 16px;
+  line-height: 16px;
+  color: $cWhite;
+  border: none;
+  border: 3px solid $cOrange;
+  background-color: $cOrange;
+
+  transition-property: background-color, border, color, outline;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
+}
+
+.btn-condition {
+  &:hover {
+    border: 3px solid $cOrangeDirty;
+    background-color: $cOrangeDirty;
+  }
+  &:focus{
+    background-color: $cOrange;
+    border: 3px solid $cOrangeDark;
+
+  }
+  &:active{
+    border: 3px solid $cOrangeDark;
+    background-color: $cOrangeDark;
+  }
+}
+
+.heading {
+  font-family: $ffTT;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.input {
+  padding: 5px 22px;
+  font-family: $ffR;
+}
+
+textarea.input {
+  padding-top: 16px;
+}
+
+body {
+  font-family: $ffR;
+}
+
+.container {
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  max-width: 1350px;
+  width: 100%;
+}
+
+.wrapper {
+  overflow: hidden;
+  min-height: 100%;
+  display: grid;
+  grid-template: minmax(80px, auto) 1fr minmax(106px, auto) / minmax(320px, 1fr);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1200px;
+ }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (max-width: 931px) {
+  .container {
+    padding-left: 27px;
+    padding-right: 27px;
+  }
+}
+
+@media (max-width: 631px) {
+  .container {
+    padding-left: 21px;
+    padding-right: 21px;
+    max-width: 630px;
+  }
+
+  .heading {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .btn {
+    padding: 9px 21px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+}

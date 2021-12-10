@@ -8,7 +8,6 @@ const cleanCSS = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync').create();
 const fileinclude = require('gulp-file-include');
-const svgSprite = require('gulp-svg-sprite');
 const ttf2woff = require('gulp-ttf2woff');
 const ttf2woff2 = require('gulp-ttf2woff2');
 const fs = require('fs');
@@ -17,6 +16,7 @@ const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const uglify = require('gulp-uglify-es').default;
 const image = require('gulp-image');
+const svgStore = require('gulp-svgstore');
 
 const fonts = () => {
   src('./src/fonts/**.ttf')
@@ -98,20 +98,17 @@ const fontsStyle = (done) => {
 	done();
 }
 
-const svgSprites = () => {
+const svgSpriteStore = () => {
   return src('./src/img/sprite/**/*.svg')
-  .pipe(svgSprite({
-    mode: {
-      stack: {
-        sprite: "../sprite.svg"
-      }
-    }
+  .pipe(svgStore({
+    inlineSvg: true
   }))
+  .pipe(rename("sprite.svg"))
   .pipe(dest('./app/img'))
 }
 
 const styles = () => {
-  return src('./src/scss/**/*.scss')
+  return src('./src/scss/main.scss')
   .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'expanded'
@@ -201,7 +198,7 @@ const watchFiles = () => {
   watch('./src/html/*.html', htmlInclude);
   watch('./src/*.html', htmlInclude);
   watch('./src/img/**.{jpg,jpeg,png,svg,webp}', images);
-  watch('./src/img/**.svg', svgSprites);
+  watch('./src/img/**.svg', svgSpriteStore);
   watch('./src/resources/**', resources);
   watch('./src/fonts/**.ttf', fonts);
   watch('./src/fonts/**.ttf', fontsStyle)
@@ -212,7 +209,7 @@ exports.styles = styles;
 exports.watchFiles = watchFiles;
 exports.fileinclude = htmlInclude;
 
-exports.default = series(clean, parallel(htmlInclude, scripts, fonts, resources, images, svgSprites), fontsStyle, styles, watchFiles);
+exports.default = series(clean, parallel(htmlInclude, scripts, fonts, resources, images, svgSpriteStore), fontsStyle, styles, watchFiles);
 
 const imagemin = () => {
   return src(['./src/img/**/*.jpg', './src/img/**/*.png', './src/img/**/*.jpeg'])
@@ -270,4 +267,4 @@ const scriptsBuild = () => {
   .pipe(dest('./app/js'))
 }
 
-exports.build = series(clean, parallel(htmlInclude, scriptsBuild, fonts, resources, images, svgSprites), fontsStyle, stylesBuild, imagemin);
+exports.build = series(clean, parallel(htmlInclude, scriptsBuild, fonts, resources, images, svgSpriteStore), fontsStyle, stylesBuild, imagemin);

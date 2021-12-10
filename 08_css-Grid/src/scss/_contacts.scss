@@ -1,0 +1,393 @@
+.section-contacts {
+  padding-top: 30px;
+  padding-bottom: 69px;
+}
+
+.map {
+  max-width: 850px;
+}
+
+[class*="ground-pane"] {
+  filter: grayscale(1);
+}
+
+.ymaps-2-1-79-gotoymaps,
+.ymaps-2-1-79-map-copyrights-promo,
+.ymaps-2-1-79-copyright .ymaps-2-1-79-copyright_logo_no,
+.ymaps-2-1-79-copyright__content {
+  display: none;
+}
+
+.contacts {
+  &__title {
+    margin-bottom: 22px;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template: 1fr / minmax(320px, 850px) minmax(278px, 410px);
+    column-gap: 30px;
+  }
+}
+
+.map {
+  position: relative;
+  overflow: hidden;
+
+  &__wrapper-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 51.7%;
+    z-index: 10;
+    display: grid;
+    grid-template: 1fr/ 1fr;
+    align-items: center;
+    padding: 71px 52px 45px 60px;
+    color: $cWhite;
+    background-color: rgba(32, 32, 32, 0.85);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &__info-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 15;
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+  }
+
+  &__svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__title {
+    margin-bottom: 5px;
+    font-family: $ffTT;
+    font-size: 24px;
+    line-height: 22px;
+    font-weight: 400;
+  }
+
+  &__address {
+    margin-bottom: 3px;
+    font-size: 16px;
+    line-height: 28px;
+    font-style: normal;
+    color: $cGrayLight;
+  }
+
+  &__tel {
+    position: relative;
+    padding-left: 23px;
+    color: $cWhite;
+    font-family: $ffTT;
+    font-size: 16px;
+    line-height: 21px;
+
+    &-svg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 22px;
+      height: 22px;
+      fill: $cSvg;
+    }
+  }
+}
+
+.map-inactive {
+  transform: translateX(-110%);
+}
+
+.form {
+  &__subtitle {
+    margin-top: -8px;
+    font-family: $ffTT;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  &__desc {
+    margin-bottom: 13px;
+    font-size: 16px;
+    line-height: 23px;
+    color: $cGrayLight2;
+  }
+
+  &__form-wrapper {
+    display: grid;
+    grid-template: 50px 50px 150px / 1fr;
+    row-gap: 20px;
+  }
+
+  &__input {
+    height: 50px;
+    width: 410px;
+    border: none;
+    background-color: $cInputLight;
+    transition-property: background-color, outline;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+
+    &::placeholder {
+      transition: color .3s ease-in-out;
+      color: $cGrayLight2;
+    }
+
+    &:hover::placeholder {
+      color: $cOrange;
+    }
+    &:focus {
+      outline: 1px solid $cOrange;
+    }
+    &:focus::placeholder {
+      color: $cGrayLight2;
+    }
+    &:active {
+      outline: none;
+      color: $cGrayDark;
+    }
+  }
+
+  &__input-messeg {
+    height: 150px;
+    resize: none;
+  }
+
+  &__btn {
+    margin-top: 21px;
+  }
+}
+
+.form__label {
+  position: relative;
+}
+
+.just-validate-error-label {
+  position: absolute;
+  top: 3px;
+  left: 22px;
+  font-size: 11px;
+}
+
+@media (max-width: 1200px) {
+  .map {
+    &__wrapper-info {
+      top: auto;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 23px 31px;
+    }
+
+    &__info {
+      max-width: 80%;
+    }
+  }
+
+  .map-inactive {
+    transform: translateY(110%);
+  }
+
+  .form {
+    &__subtitle {
+      margin-top: -10px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .section-contacts {
+    padding-bottom: 67.5px;
+  }
+
+  .contacts__wrapper {
+    grid-template: 1fr/minmax(320px, 590px) minmax(278px, 342px);
+  }
+
+  .map {
+    &__info {
+      max-width: 56%;
+    }
+
+    &__address {
+      display: inline;
+    }
+
+    &__tel {
+      margin-left: 6px;
+    }
+  }
+
+  .form {
+    &__input {
+      max-width: 342px;
+    }
+
+    &__btn {
+      margin-top: 22px;
+    }
+  }
+}
+
+@media (max-width: 1006px) {
+  .map {
+    &__info {
+      max-width: 90%;
+    }
+
+    &__address {
+      display: block;
+    }
+
+    &__tel {
+      margin-left: 0;
+    }
+  }
+}
+
+@media (max-width: 931px) {
+  .section-contacts {
+    padding-bottom: 68px;
+  }
+
+  .contacts {
+    &__wrapper {
+      display: block;
+    }
+  }
+
+  .map {
+    max-width: 876px;
+    height: 460.5px;
+
+    &__wrapper-info {
+      padding: 25px 31px;
+    }
+
+    &__address {
+      max-width: 76%;
+    }
+  }
+
+  .form {
+    max-width: 67%;
+    padding-top: 22px;
+
+    &__desc {
+      max-width: 466px;
+    }
+
+    &__subtitle {
+      margin-top: 0;
+    }
+
+    &__input {
+      max-width: 100%;
+      width: 466px;
+    }
+
+    &__btn {
+      margin-top: 22px;
+    }
+  }
+}
+
+@media (max-width: 631px) {
+  .section-contacts {
+    padding-bottom: 50px;
+  }
+
+  .contacts {
+    &__container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &__title {
+      margin-bottom: 13px;
+      padding-left: 21px;
+    }
+  }
+
+  .map {
+    max-height: none;
+    height: 472px;
+
+    &__wrapper-info {
+      display: block;
+      top: 66.8%;
+      padding: 26px 38px 8px 19px;
+    }
+
+    &__info {
+      max-width: none;
+    }
+
+    &__title {
+      margin-bottom: 10px;
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    &__address {
+      margin-bottom: 12px;
+      max-width: none;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    &__tel {
+      padding-left: 19px;
+      font-size: 14px;
+      line-height: 18px;
+
+      &-svg {
+        width: 19px;
+        height: 19px;
+      }
+    }
+  }
+
+  .form {
+    max-width: none;
+    padding-top: 23px;
+    padding-left: 21px;
+    padding-right: 21px;
+
+    &__subtitle {
+      margin-bottom: 8px;
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    &__desc {
+      margin-bottom: 16px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    &__form-wrapper {
+      grid-template: 40px 40px 150px/ minmax(278px, 450px);
+    }
+
+    &__input {
+      height: 40px;
+    }
+
+    &__input-messeg {
+      height: 150px;
+    }
+
+    &__btn {
+      margin-top: 19px;
+      padding: 9px 19px;
+    }
+  }
+}

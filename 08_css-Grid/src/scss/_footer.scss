@@ -1,0 +1,143 @@
+.footer {
+  padding-top: 24px;
+  padding-bottom: 20px;
+  background-color: $cGrayDark;
+  color: $cWhite;
+
+  &__container {
+    display: grid;
+    grid-template: 1fr / 300px auto 162px;
+    align-items: center;
+  }
+
+  &__logo-link {
+    &:focus-visible {
+      outline: 1px solid $cOrange;
+    }
+  }
+
+  &__logo-desc {
+    font-family: $ffTT;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+.quote {
+  padding-left: 17%;
+
+  &__text {
+    max-width: 361px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  &__name {
+    color: $cQuoteName;
+  }
+}
+
+.social {
+  &__desc {
+    margin-bottom: 10px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 30px);
+    grid-gap: 20px;
+    justify-content: center;
+    max-width: 153px;
+    margin: auto;
+  }
+
+  &__item {
+    margin: auto;
+  }
+
+  &__svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.social__link:focus .svg {
+  fill: $cOrangeDirty;
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    padding-top: 24px;
+
+    &__container {
+      grid-template: 1fr/250px auto 162px;
+      justify-content: space-between;
+    }
+
+    &__logo-img {
+      margin-top: 5px;
+      width: 166px;
+    }
+  }
+
+  .quote {
+    margin-left: 53px;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 931px) {
+  .footer {
+    &__container {
+      grid-template: 1fr / 264px 161px ;
+      justify-content: space-between;
+    }
+
+    &__quote {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 631px) {
+  .footer {
+    padding: 0;
+    &__container {
+      grid-template: minmax(123px, 1fr) minmax(62px, 0.5fr) / 1fr;
+    }
+
+    &__logo-img {
+      margin-top: 0;
+      width: 111px;
+    }
+
+    &__social {
+      grid-row: 1/2;
+    }
+
+    &__logo {
+      grid-row: 2/3;
+      text-align: center;
+
+      &-desc {
+        font-size: 10px;
+        line-height: 14px;
+      }
+    }
+  }
+
+  .social__desc {
+    margin-top: 3px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .input {
+    font-size: 14px;
+    padding: 5px 22px;
+  }
+
+  textarea.input {
+    padding-top: 12px;
+  }
+}

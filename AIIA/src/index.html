@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIIA</title>
+  <link rel="stylesheet" href="css/main.min.css" type="text/css">
+
+  <link rel="preload" href="./fonts/Roboto-Bold.woff2" as="font">
+  <script src="js/main.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__container container">
+      <a href="" class="header__logo">
+        <picture>
+          <source media="(min-width: 863px)" srcset="./img/logo.svg">
+          <source media="(min-width: 320px)" srcset="./img/logo_375.svg">
+          <img class="header__logo-img" src="./img/logo.svg" alt="Logo">
+        </picture>
+      </a>
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="">Features</a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="">Pricing</a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="">About</a>
+          </li>
+        </ul>
+      </nav>
+      <button class="header__btn btn">Let’s Talk</button>
+      <button id="menu" class="header__menu-btn">MENU</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-hero hero">
+      <div class="hero__container container container_small">
+          <div class="hero__content">
+            <h1 class="hero__title">
+              Delivering the future of w
+              <span class="hero__title-work">
+                <svg class="hero__svg svg">
+                  <use xlink:href="img/sprite.svg#hero-work"></use>
+                </svg>
+                rk<span class="hero__title-work-dot">.</span>
+              </span>
+            </h1>
+            <button class="hero__btn btn">Let’s Go</button>
+            <h2 class="hero__subtitle">Business Transformation</h2>
+            <p class="hero__text">Delivering future proofed organisations who are obsessed with customers, digitally enabled, operationally excellent and engaging their teams in new ways of working.</p>
+          </div>
+          <div class="hero__visual visual">
+            <picture>
+              <source media="(min-width: 1452px)" srcset="./img/hero/01.jpg">
+              <source media="(min-width: 1332px)" srcset="./img/hero/01_1450.jpg">
+              <source media="(min-width: 1202px)" srcset="./img/hero/01_1330.jpg">
+              <source media="(min-width: 1025px)" srcset="./img/hero/01_1200.jpg">
+              <source media="(min-width: 768px)" srcset="./img/hero/01_1024.jpg">
+              <img class="visual__img" src="./img/hero/01.jpg" alt="">
+            </picture>
+            <svg class="visual__sun">
+              <use xlink:href="img/sprite.svg#hero-sun"></use>
+            </svg>
+            <svg class="visual__sun-vector1 svg">
+              <use xlink:href="img/sprite.svg#sun-vector1"></use>
+            </svg>
+            <svg class="visual__sun-vector2 svg">
+              <use xlink:href="img/sprite.svg#sun-vector2"></use>
+            </svg>
+          </div>
+      </div>
+    </section>
+
+    <section class="section-experience experience">
+      <div class="experience__container container container_small">
+        <div class="experience__picture">
+          <!-- <img class="experience__picture-img" src="./img/experience/img.jpg" alt=""> -->
+        </div>
+        <div class="experience__content">
+          <div class="experience__steps">
+            <h2 class="experience__title">Digital Experience</h2>
+            <p class="experience__text">A design led approach providing customers and staff personalised, trusted and immediate access to information and tools using web, cloud, mobile, social, and artificial intelligence technology.</p>
+            <a class="experience__link" href="">Knowledge Management</a>
+            <a class="experience__link" href="">Digital Strategy</a>
+          </div>
+          <div class="experience__numbers">
+            <div class="experience__numbers-start">01</div>
+            <div class="experience__numbers-progress"></div>
+            <div class="experience__numbers-end">03</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-products products">
+      <div class="products__container container container_small">
+        <div class="products__content">
+          <h2 class="products__title">Our Products<span class="products__title-dot">.</span></h2>
+          <p class="products__text">Control and capability to improve performance and collaboration for business, with an interface and experience users love.</p>
+        </div>
+        <div class="products__picture">
+          <img src="./img/products/img1.jpg" alt="">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container container">
+      <div class="footer__copy">© 2018–2020 Aiia</div>
+      <nav class="footer__nav">
+        <ul class="footer__nav-list">
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="">Features</a>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="">Pricing</a>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="">About</a>
+          </li>
+        </ul>
+      </nav>
+      <ul class="social__list">
+        <li class="social__item">
+          <a href="" class="social__link">
+            <svg class="social__svg">
+              <use xlink:href="img/sprite.svg#fb"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social__item">
+          <a href="" class="social__link">
+            <svg class="social__svg">
+              <use xlink:href="img/sprite.svg#inst"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social__item">
+          <a href="" class="social__link">
+            <svg class="social__svg">
+              <use xlink:href="img/sprite.svg#twitt"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

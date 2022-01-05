@@ -1,0 +1,187 @@
+.experience {
+  &__container {
+    position: relative;
+    display: flex;
+    padding-top: 55px;
+    padding-bottom: 140px;
+
+    &::before {
+      position: absolute;
+      bottom: 12%;
+      right: 0;
+      content: url(../img/experience/experience-right.svg);
+    }
+  }
+
+  &__picture {
+    position: relative;
+    width: 50%;
+    height: 495px;
+    background-image: url(../img/experience/img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    &::after {
+      position: absolute;
+      top: 78%;
+      left: -23%;
+      content: url(../img/experience/experience-left.svg);
+      display: block;
+    }
+  }
+
+  &__content {
+    display: flex;
+    width: 42.3%;
+    padding: 7.9% 30px 7% 0;
+    margin-left: auto;
+  }
+
+  &__title {
+    margin-bottom: 17px;
+    font-family: $font617;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 400;
+    color: $cWhite;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    max-width: 74%;
+    font-size: 18px;
+    line-height: 27px;
+    color: $cText;
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    padding-left: 30px;
+    padding-right: 40px;
+    color: $cYellow;
+    font-family: $font617;
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 400;
+    background-image: url(../img/experience/smiley.svg);
+    background-repeat: no-repeat;
+    background-position: center left;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      content: "";
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-image: url(../img/arrow.svg);
+      background-repeat: no-repeat;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.experience__numbers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+
+  &-progress {
+    width: 2px;
+    min-height: 75%;
+    background-color: #fff;
+  }
+
+  &-start,
+  &-end {
+    font-family: $font617;
+  }
+
+  &-start {
+    padding-top: 4px;
+    font-size: 14px;
+    color: #F7D960;
+  }
+
+  &-end {
+    padding-bottom: 20px;
+    font-size: 10px;
+    color: #FFFCEF;
+  }
+}
+
+@media (max-width: 1331px) {
+  .experience__container {
+    padding-bottom: 130px;
+  }
+
+  .experience__text {
+    max-width: 82%;
+  }
+
+  .experience__picture {
+    height: 460px;
+
+    &::after {
+     left: -20%;
+     content: url(../img/experience/experience-left_1200.svg);
+    }
+  }
+}
+
+@media (max-width: 1202px) {
+  .experience {
+    &__content {
+      padding: 5.9% 20px 11% 0;
+    }
+
+    &__numbers-end {
+      padding-bottom: 5px;
+    }
+
+    &__text {
+      max-width: 85%;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  .experience__picture {
+    height: 446px;
+
+     &::after {
+       left: -25%;
+     }
+  }
+}
+
+@media (max-width: 1025px) {
+  .experience {
+    &__container {
+      padding-top: 40px;
+      padding-bottom: 80px;
+    }
+    &__content {
+      padding-right: 0;
+    }
+
+    &__link {
+      padding-right: 35px;
+    }
+
+    &__picture::after {
+      content: url(../img/experience/experience-left_1024.svg);
+      left: -12%;
+      top: 86%;
+    }
+  }
+}

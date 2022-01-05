@@ -1,0 +1,136 @@
+.header {
+  position: fixed;
+  z-index: 95;
+  width: 100vw;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  &::before{
+    z-index: 80;
+    background-color: $cBg-header;
+    backdrop-filter: blur(42px);
+  }
+  &::after {
+    z-index: 90;
+    background-image: url(../img/mask.png);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    transform: matrix(1, 0, 0, -1, 0, 0);
+  }
+
+  &__container {
+    position: relative;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    min-height: 116px;
+    padding: 21px 50px 15px;
+    border-bottom: 1px solid #666;
+    font-family: $fontAxiforma;
+  }
+
+  &__logo {
+    margin-right: 125px;
+  }
+
+  &__nav-list {
+    display: flex;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFCEF;
+  }
+
+  &__nav-item:not(:last-child) {
+    margin-right: 53px;
+  }
+
+  &__btn {
+    position: relative;
+    margin-top: 15px;
+    margin-left: auto;
+    padding: 20px 31px;
+    font-size: 12px;
+    line-height: 16px;
+    background-color: $cBg;
+    transform: translate(-6px, -5px);
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: -5px;
+      right: -5px;
+      width: 114px;
+      height: 54px;
+      border: 0.3px solid #131313;
+    }
+  }
+
+  &__menu-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 1202px) {
+  .header__container {
+    min-height: 116px;
+    padding: 21px 40px 15px;
+  }
+}
+
+@media (max-width: 1025px)  {
+  .header__container {
+    min-height: 106px;
+    padding: 15px 30px;
+  }
+}
+
+@media (max-width: 863px) {
+  .header {
+    background-color: $cBg;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    &__nav {
+      display: none;
+    }
+
+    &__btn {
+      display: none;
+    }
+
+    &__container {
+      align-items: flex-end;
+      justify-content: space-between;
+      min-height: 72px;
+      padding: 5px 24px;
+    }
+
+    &__logo {
+      width: 100px;
+      margin-right: 0;
+      transform: translateY(17px);
+    }
+
+    &__menu-btn {
+      display: block;
+      padding: 0;
+      font-size: 12px;
+      line-height: 24px;
+      font-weight: 400;
+      color: #FFFCEF;
+      background-color: transparent;
+      border: none;
+    }
+  }
+}

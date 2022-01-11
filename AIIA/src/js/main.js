@@ -12,7 +12,14 @@ document.addEventListener('DOMContentLoaded', function() {
     innerHeight = window.innerHeight;
     progressBar.style.width = (scrollY * 100 / (fullHeight - innerHeight)) + '%';
   }
+
   fillProgressLine();
+
+
+  document.querySelector('#menu').addEventListener('click', function() {
+    document.querySelector('#menu-active').classList.toggle('menu_active')
+  });
+
 
 
   const accordions = document.querySelectorAll('.accordion__item');
@@ -37,15 +44,4 @@ document.addEventListener('DOMContentLoaded', function() {
     .from('#vector1', {duration: 1.2, strokeDasharray: "0 800"}, "-=.3")
     .from('#vector2', {duration: .1, opacity: 0})
     .from('#vector2', {duration: .5, strokeDasharray: "0 140"}, "-=.1")
-
 })
-
-// import './gsap.min.js'
-// import { gsap } from "gsap"
-
-// .from('.hero__btn', {opacity: 0, y: 70, duration: 1}, "-=1")
-// .from('.hero__descr', {opacity: 0, duration: 0.6}, "-=0.2")
-// .from('.photos-img1', {opacity: 0, scale: 0.9, duration: 0.5}, "-=0.4" )
-// .from('.photos-img2', {opacity: 0, scale: 0.9, duration: 0.5}, "-=0.3" )
-// .from('.photos-img3', {opacity: 0, scale: 0.9, duration: 0.5}, "-=0.3" )
-// .from('.photos__author', {opacity: 0, duration: 0.8}, "-=0.3" );

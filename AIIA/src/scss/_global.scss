@@ -53,11 +53,14 @@ body {
 }
 
 .container {
-  overflow: hidden;
   margin: 0 auto;
   padding: 0 50px;
   width: 100%;
   max-width: 1600px;
+}
+
+.wrapper {
+  overflow: hidden;
 }
 
 .container_small {

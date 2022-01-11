@@ -116,6 +116,7 @@
       width: 2px;
       height: 33%;
       background-color: #fff;
+      transition: height .4s ease-in-out;
     }
   }
 
@@ -125,6 +126,7 @@
   }
 
   &-start {
+    display: none;
     padding-top: 10px;
     font-size: 14px;
     color: #F7D960;
@@ -135,6 +137,10 @@
     font-size: 10px;
     color: #FFFCEF;
   }
+}
+
+.experience__numbers-start_active {
+  display: block;
 }
 
 

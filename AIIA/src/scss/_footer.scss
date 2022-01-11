@@ -56,9 +56,7 @@
       display: grid;
       grid-template: repeat(2, 1fr) / repeat(2, 1fr);
       row-gap: 15px;
-      // flex-direction: column-reverse;
       padding: 15px 24px;
-      // text-align: center;
     }
 
     &__nav {

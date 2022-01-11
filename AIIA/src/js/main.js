@@ -1,6 +1,5 @@
-
-// import as from './gsap.min.js';
 document.addEventListener('DOMContentLoaded', function() {
+  // progressbar
   let fullHeight, innerHeight;
   const progressBar = document.querySelector('.progressbar-line');
 
@@ -15,14 +14,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   fillProgressLine();
 
-
+  // menu
   document.querySelector('#menu').addEventListener('click', function() {
     document.querySelector('#menu-active').classList.toggle('menu_active')
   });
 
-
+  // accordion
   const accordions = document.querySelectorAll('.accordion__item');
-
   for(item of accordions) {
     item.addEventListener('click', function() {
       if(this.classList.contains('active')) {
@@ -36,6 +34,30 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   }
 
+  // progressbar accordion
+  document.querySelector('#accordionItem_1').addEventListener('click', function() {
+    document.querySelector('#progressbar').style.height = "33%"
+  });
+  document.querySelector('#accordionItem_2').addEventListener('click', function() {
+    document.querySelector('#progressbar').style.height = "66%"
+  });
+  document.querySelector('#accordionItem_3').addEventListener('click', function() {
+    document.querySelector('#progressbar').style.height = "100%"
+  });
+
+  // tabs for progressbar accordion
+  document.querySelectorAll('.accordion__item').forEach(function(tabs) {
+    tabs.addEventListener('click', function(event) {
+      const path = event.currentTarget.dataset.path
+
+      document.querySelectorAll('.experience__numbers-start').forEach(function(tabContent) {
+        tabContent.classList.remove('experience__numbers-start_active')
+      })
+      document.querySelector(`[data-target="${path}"]`).classList.add('experience__numbers-start_active')
+    })
+  })
+
+  // animation
   var tl = gsap.timeline();
 
   tl.from('.visual__sun', {duration: 2.5, rotate: -360, scale: 0.6})

@@ -105,23 +105,25 @@
           <div class="experience__picture"></div>
           <div class="experience__content">
             <ul class="experience__steps accordion">
-              <li class="accordion__item active">
+              <li id="accordionItem_1" class="accordion__item active" data-path="one">
                 <h2 class="accordion__title experience__title">Digital Experience</h2>
                 <p class="accordion__content experience__text">A design led approach providing customers and staff personalised, trusted and immediate access to information and tools using web, cloud, mobile, social, and artificial intelligence technology.</p>
               </li>
-              <li class="accordion__item">
+              <li id="accordionItem_2" class="accordion__item" data-path="two">
                 <h2 class="accordion__title experience__link experience__link_first">Knowledge Management</h2>
                 <p class="accordion__content experience__text">A design led approach providing customers and staff personalised, trusted and immediate access to information and tools using web, cloud, mobile, social, and artificial intelligence technology.</p>
               </li>
-              <li class="accordion__item">
+              <li id="accordionItem_3" class="accordion__item" data-path="three">
                 <h2 class="accordion__title experience__link">Digital Strategy</h2>
                 <p class="accordion__content experience__text">A design led approach providing customers and staff personalised, trusted and immediate access to information and tools using web.</p>
               </li>
             </ul>
             <div class="experience__numbers">
-              <div class="experience__numbers-start">01</div>
+              <div class="experience__numbers-start experience__numbers-start_active" data-target="one">01</div>
+              <div class="experience__numbers-start" data-target="two">02</div>
+              <div class="experience__numbers-start" data-target="three">03</div>
               <div class="experience__numbers-progress">
-                <div class="experience__numbers-progress_active"></div>
+                <div id="progressbar" class="experience__numbers-progress_active"></div>
               </div>
               <div class="experience__numbers-end">03</div>
             </div>

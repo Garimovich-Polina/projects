@@ -25,7 +25,7 @@
       transform: translateX(34px);
 
       &-dot {
-        color: #F7D960;
+        color: $cYellow;
       }
     }
   }
@@ -44,7 +44,7 @@
     position: relative;
     padding: 48px 68px;
     margin-bottom: 112px;
-    color: #F7D960;
+    color: $cYellow;
     font-size: 18px;
     line-height: 18px;
     background-image: url(../img/hero/arrow.svg);
@@ -91,7 +91,7 @@
     font-size: 20px;
     line-height: 25px;
     font-weight: 400;
-    color: #FFE786;
+    color: $cLightYellow;
   }
 
   &__text {

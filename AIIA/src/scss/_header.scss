@@ -41,7 +41,7 @@
 
   &__nav-list {
     display: flex;
-    color: #FFFCEF;
+    color: $cLink;
   }
 
   &__nav-item:not(:last-child) {
@@ -68,7 +68,7 @@
     }
 
     &::after {
-      color: rgb(0, 52, 223);
+      color: #0034df;
 		  z-index: -1;
     }
 
@@ -113,7 +113,7 @@
     font-size: 12px;
     line-height: 16px;
     background-color: transparent;
-    border: 0.3px solid #131313;
+    border: 0.3px solid $cBg;
 
     &:hover.header__btn::before {
       transform: translate(7px, 5px);
@@ -193,7 +193,7 @@
       font-size: 12px;
       line-height: 24px;
       font-weight: 400;
-      color: #FFFCEF;
+      color: $cLink;
       background-color: transparent;
       border: none;
     }

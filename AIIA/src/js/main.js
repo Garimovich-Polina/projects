@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   tl.from('.visual__sun', {duration: 2.5, rotate: -360, scale: 0.6})
     .from('#vector1', {duration: .1, opacity: 0})
-    .from('#vector1', {duration: 1.2, strokeDasharray: "0 800"}, "-=.3")
+    .from('#vector1', {duration: 1, strokeDasharray: "0 800"}, "-=.3")
     .from('#vector2', {duration: .1, opacity: 0})
     .from('#vector2', {duration: .5, strokeDasharray: "0 140"}, "-=.1")
 })

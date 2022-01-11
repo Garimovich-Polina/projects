@@ -1,5 +1,5 @@
 .footer {
-  background-color: #000;
+  background-color: $cBlack;
   &__container {
     display: flex;
     align-items: center;
@@ -11,7 +11,7 @@
   &__copy {
     font-size: 16px;
     line-height: 24px;
-    color: #c3c3c3;
+    color: $cCopyright;
   }
 
   &__nav-list {
@@ -24,7 +24,7 @@
   }
 
   &__nav-link {
-    color: #FFFCEF;
+    color: $cLink;
     font-size: 14px;
     line-height: 22px;
   }

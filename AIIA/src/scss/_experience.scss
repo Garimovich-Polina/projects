@@ -110,12 +110,12 @@
   &-progress {
     width: 2px;
     height: 206px;
-    background-color: #2b2a29;
+    background-color: $cProgressBar;
 
     &_active {
       width: 2px;
       height: 33%;
-      background-color: #fff;
+      background-color: $cWhite;
       transition: height .4s ease-in-out;
     }
   }
@@ -129,13 +129,13 @@
     display: none;
     padding-top: 10px;
     font-size: 14px;
-    color: #F7D960;
+    color: $cYellow;
   }
 
   &-end {
     padding-bottom: 20px;
     font-size: 10px;
-    color: #FFFCEF;
+    color: $cLink;
   }
 }
 

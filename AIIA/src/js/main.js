@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
-
   const accordions = document.querySelectorAll('.accordion__item');
 
   for(item of accordions) {

@@ -109,9 +109,14 @@
 
   &-progress {
     width: 2px;
-    // min-height: 75%;
     height: 206px;
-    background-color: #fff;
+    background-color: #2b2a29;
+
+    &_active {
+      width: 2px;
+      height: 33%;
+      background-color: #fff;
+    }
   }
 
   &-start,
@@ -131,6 +136,7 @@
     color: #FFFCEF;
   }
 }
+
 
 @media (max-width: 1331px) {
   .experience__container {

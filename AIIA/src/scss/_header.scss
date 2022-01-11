@@ -142,7 +142,7 @@
     display: none;
   }
 
-  &__nav-menu {
+  &__menu {
     display: none;
   }
 }
@@ -203,6 +203,7 @@
     }
 
     &__menu{
+      display: block;
       position: absolute;
       top: 70px;
       right: 0;

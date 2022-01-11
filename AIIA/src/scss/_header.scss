@@ -32,7 +32,6 @@
     align-items: center;
     min-height: 116px;
     padding: 21px 50px 15px;
-    border-bottom: 1px solid #666;
     font-family: $fontAxiforma;
   }
 
@@ -42,8 +41,6 @@
 
   &__nav-list {
     display: flex;
-    font-size: 16px;
-    font-weight: 500;
     color: #FFFCEF;
   }
 
@@ -51,25 +48,96 @@
     margin-right: 53px;
   }
 
+  // &__nav-item {
+
+  // }
+
+  &__nav-link {
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+
+    &::after, &::before {
+      position: absolute;
+      display: block;
+      content: attr(data-text);
+      top: -1px;
+      left: 0;
+      opacity: .8;
+    }
+
+    &::before {
+      // left: 1px;
+      // text-shadow: -2px 0 red;
+      color: #f7024c;
+		z-index: -2;
+    }
+
+    &::after {
+      color: rgb(0, 52, 223);
+		  z-index: -1;
+      // left: -1px;
+      // text-shadow: -2px 0 blue;
+    }
+    &:hover {
+      &:before {
+        animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both 5
+      }
+      &:after {
+        animation: glitch .3s cubic-bezier(.25, .46, .45, .94) reverse both 5
+      }
+    }
+  }
+
+  @keyframes glitch {
+    0% {
+      transform: translate(0)
+    }
+    20% {
+      transform: translate(-1px, 2px)
+    }
+    40% {
+      transform: translate(-1px, -1px)
+    }
+    60% {
+      transform: translate(1px, 1px)
+    }
+    80% {
+      transform: translate(1px, -2px)
+    }
+    to {
+      transform: translate(0)
+    }
+  }
+
   &__btn {
     position: relative;
     margin-top: 15px;
     margin-left: auto;
     padding: 20px 31px;
+    width: 114px;
+    height: 54px;
     font-size: 12px;
     line-height: 16px;
-    background-color: $cBg;
-    transform: translate(-6px, -5px);
+    background-color: transparent;
+    border: 0.3px solid #131313;
+
+    &:hover.header__btn::before {
+      transform: translate(7px, 5px);
+    }
 
     &::before {
-      content: "";
+      content: "Let’s Talk";
       position: absolute;
-      display: block;
-      bottom: -5px;
-      right: -5px;
-      width: 114px;
+      top: -7px;
+      left: -8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 115px;
       height: 54px;
-      border: 0.3px solid #131313;
+      background-color: $cBg;
+      transition: transform .4s ease-in-out;
     }
   }
 

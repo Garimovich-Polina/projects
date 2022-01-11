@@ -7,10 +7,14 @@
   <link rel="stylesheet" href="css/main.min.css" type="text/css">
 
   <link rel="preload" href="./fonts/Roboto-Bold.woff2" as="font">
-  <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="./js/main.js"></script>
 </head>
 
 <body>
+  <div class="progressbar">
+    <div class="progressbar-line"></div>
+  </div>
   <header class="header">
     <div class="header__container container">
       <a href="" class="header__logo">
@@ -23,17 +27,17 @@
       <nav class="header__nav">
         <ul class="header__nav-list">
           <li class="header__nav-item">
-            <a class="header__nav-link" href="">Features</a>
+            <a class="header__nav-link" href="" data-text="Features">Features</a>
           </li>
           <li class="header__nav-item">
-            <a class="header__nav-link" href="">Pricing</a>
+            <a class="header__nav-link" href="" data-text="Pricing">Pricing</a>
           </li>
           <li class="header__nav-item">
-            <a class="header__nav-link" href="">About</a>
+            <a class="header__nav-link" href="" data-text="About">About</a>
           </li>
         </ul>
       </nav>
-      <button class="header__btn btn">Let’s Talk</button>
+      <button class="header__btn btn"></button>
       <button id="menu" class="header__menu-btn">MENU</button>
     </div>
   </header>
@@ -43,7 +47,7 @@
       <div class="hero__container container container_small">
           <div class="hero__content">
             <h1 class="hero__title">
-              Delivering the future of w
+              Delivering the<br>future of w
               <span class="hero__title-work">
                 <svg class="hero__svg svg">
                   <use xlink:href="img/sprite.svg#hero-work"></use>
@@ -61,34 +65,53 @@
               <source media="(min-width: 1332px)" srcset="./img/hero/01_1450.jpg">
               <source media="(min-width: 1202px)" srcset="./img/hero/01_1330.jpg">
               <source media="(min-width: 1025px)" srcset="./img/hero/01_1200.jpg">
-              <source media="(min-width: 768px)" srcset="./img/hero/01_1024.jpg">
+              <source media="(min-width: 863px)" srcset="./img/hero/01_1024.jpg">
+              <source media="(min-width: 769px)" srcset="./img/hero/01_862.jpg">
+              <source media="(min-width: 657px)" srcset="./img/hero/01_768.jpg">
+              <source media="(min-width: 320px)" srcset="./img/hero/01_320.jpg">
               <img class="visual__img" src="./img/hero/01.jpg" alt="">
             </picture>
             <svg class="visual__sun">
               <use xlink:href="img/sprite.svg#hero-sun"></use>
             </svg>
-            <svg class="visual__sun-vector1 svg">
+            <!-- <svg class="visual__sun-vector1 svg">
               <use xlink:href="img/sprite.svg#sun-vector1"></use>
+            </svg> -->
+            <svg class="visual__sun-vector1 svg" width="321" height="274" viewbox="0 0 321 274" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path id="vector1" d="M1.58571 175.971C41.6152 237.672 276.41 308.278 213.06 250.348C149.711 192.418 69.4162 72.8628 143.034 89.9703C247.489 116.45 261.396 112.64 240.571 90.3455C172.301 22.9174 233.561 26.4949 319.5 1.56788" stroke="#FFE786" stroke-width="3" stroke-linecap="round"/>
             </svg>
-            <svg class="visual__sun-vector2 svg">
+            <svg class="visual__sun-vector2 svg" width="84" height="107" viewbox="0 0 84 107" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path id="vector2" d="M1.5 105.5C19.8333 102.5 56 77.9 82 1.5" stroke="#FFE786" stroke-width="3" stroke-linecap="round" stroke-linejoin="bevel"/>
+            </svg>
+            <!-- <svg class="visual__sun-vector2 svg">
               <use xlink:href="img/sprite.svg#sun-vector2"></use>
-            </svg>
+            </svg> -->
           </div>
       </div>
     </section>
 
     <section class="section-experience experience">
       <div class="experience__container container container_small">
-        <div class="experience__picture">
-          <!-- <img class="experience__picture-img" src="./img/experience/img.jpg" alt=""> -->
-        </div>
+        <div class="experience__picture"></div>
         <div class="experience__content">
-          <div class="experience__steps">
-            <h2 class="experience__title">Digital Experience</h2>
+          <ul class="experience__steps accordion">
+            <li class="accordion__item active">
+              <h2 class="accordion__title experience__title">Digital Experience</h2>
+              <p class="accordion__content experience__text">A design led approach providing customers and staff personalised, trusted and immediate access to information and tools using web, cloud, mobile, social, and artificial intelligence technology.</p>
+            </li>
+            <li class="accordion__item">
+              <h2 class="accordion__title experience__link experience__link_first">Knowledge Management</h2>
+              <p class="accordion__content experience__text">A design led approach providing customers and staff personalised, trusted and immediate access to information and tools using web, cloud, mobile, social, and artificial intelligence technology.</p>
+            </li>
+            <li class="accordion__item">
+              <h2 class="accordion__title experience__link">Digital Strategy</h2>
+              <p class="accordion__content experience__text">A design led approach providing customers and staff personalised, trusted and immediate access to information and tools using web.</p>
+            </li>
+            <!-- <h2 class="experience__title">Digital Experience</h2>
             <p class="experience__text">A design led approach providing customers and staff personalised, trusted and immediate access to information and tools using web, cloud, mobile, social, and artificial intelligence technology.</p>
             <a class="experience__link" href="">Knowledge Management</a>
-            <a class="experience__link" href="">Digital Strategy</a>
-          </div>
+            <a class="experience__link" href="">Digital Strategy</a> -->
+          </ul>
           <div class="experience__numbers">
             <div class="experience__numbers-start">01</div>
             <div class="experience__numbers-progress"></div>
@@ -105,7 +128,13 @@
           <p class="products__text">Control and capability to improve performance and collaboration for business, with an interface and experience users love.</p>
         </div>
         <div class="products__picture">
-          <img src="./img/products/img1.jpg" alt="">
+          <picture>
+            <source media="(min-width: 769px)" srcset="./img/products/img1.jpg">
+            <!-- <source media="(min-width: 470px)" srcset="./img/products/img1.jpg"> -->
+            <source media="(min-width: 376px)" srcset="./img/products/img1_376.jpg">
+            <source media="(min-width: 320px)" srcset="./img/products/img1_320.jpg">
+            <img class="products__picture-img" src="./img/products/img1.jpg" alt="">
+          </picture>
         </div>
       </div>
     </section>

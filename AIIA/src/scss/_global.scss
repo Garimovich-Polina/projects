@@ -75,6 +75,22 @@ body {
   overflow: hidden;
 }
 
+.progressbar {
+  position: fixed;
+  top: 116px;
+  z-index: 99;
+  height: 1px;
+  width: 100%;
+  background-color: #3F3F3C;
+}
+
+.progressbar > .progressbar-line {
+  height: 1px;
+  width: 0;
+  background: rgb(67,54,255);
+  background: linear-gradient(90deg, rgba(67,54,255,1) 0%, rgba(58,249,254,1) 50%, rgba(105,59,226,1) 100%);
+}
+
 @media (max-width: 1550px) {
   .container_small {
     padding: 0 8%;
@@ -91,19 +107,27 @@ body {
   .container_small {
     padding: 0 30px;
   }
+
+  .progressbar {
+    top: 106px;
+  }
 }
 
 @media (max-width: 863px) {
   .container,
   .container_small {
-    padding: 0 24px;
+    padding: 0 0;
+  }
+
+  .progressbar {
+    top: 72px;
   }
 }
 
-@media (max-width: 631px) {
-  .container {
-    padding-left: 21px;
-    padding-right: 21px;
-    max-width: 630px;
-  }
-}
+// @media (max-width: 631px) {
+//   .container {
+//     padding-left: 21px;
+//     padding-right: 21px;
+//     max-width: 630px;
+//   }
+// }

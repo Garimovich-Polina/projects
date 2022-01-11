@@ -48,10 +48,6 @@
     margin-right: 53px;
   }
 
-  // &__nav-item {
-
-  // }
-
   &__nav-link {
     position: relative;
     font-size: 16px;
@@ -67,24 +63,21 @@
     }
 
     &::before {
-      // left: 1px;
-      // text-shadow: -2px 0 red;
       color: #f7024c;
-		z-index: -2;
+	  	z-index: -2;
     }
 
     &::after {
       color: rgb(0, 52, 223);
 		  z-index: -1;
-      // left: -1px;
-      // text-shadow: -2px 0 blue;
     }
+
     &:hover {
       &:before {
-        animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both 5
+        animation: glitch .3s cubic-bezier(.25, .46, .45, .94) infinite;
       }
       &:after {
-        animation: glitch .3s cubic-bezier(.25, .46, .45, .94) reverse both 5
+        animation: glitch .3s cubic-bezier(.25, .46, .45, .94) reverse infinite;
       }
     }
   }
@@ -94,16 +87,16 @@
       transform: translate(0)
     }
     20% {
-      transform: translate(-1px, 2px)
+      transform: translate(-1px, 3px)
     }
     40% {
-      transform: translate(-1px, -1px)
+      transform: translate(-2px, -3px)
     }
     60% {
-      transform: translate(1px, 1px)
+      transform: translate(2px, 2px)
     }
     80% {
-      transform: translate(1px, -2px)
+      transform: translate(2px, -3px)
     }
     to {
       transform: translate(0)

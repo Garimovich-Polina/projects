@@ -38,48 +38,11 @@
     margin-left: auto;
   }
 
-  &__title {
-    padding-top: 5px;
-    font-family: $font617;
-    font-size: 18px;
-    line-height: 25px;
-    font-weight: 400;
-    color: $cWhite;
-  }
-
   &__text {
     max-width: 74%;
     font-size: 18px;
     line-height: 27px;
     color: $cText;
-  }
-
-  &__link {
-    position: relative;
-    display: inline-block;
-    padding-left: 30px;
-    padding-right: 40px;
-    color: $cYellow;
-    font-family: $font617;
-    font-size: 14px;
-    line-height: 25px;
-    font-weight: 400;
-    background-image: url(../img/experience/smiley.svg);
-    background-repeat: no-repeat;
-    background-position: center left;
-
-    &::after {
-      position: absolute;
-      top: 0;
-      right: 0;
-      content: "";
-      display: block;
-      width: 24px;
-      height: 24px;
-      background-image: url(../img/arrow.svg);
-      background-repeat: no-repeat;
-      transform: rotate(-45deg);
-    }
   }
 }
 
@@ -94,10 +57,52 @@
     overflow: hidden;
     transition: height 0.4s ease-in-out;
   }
+
+  &__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    color: $cYellow;
+    font-family: $font617;
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 400;
+    transition: all .3s ease-in-out;
+
+    &-smiley {
+      width: 25px;
+      height: 24px;
+      margin-right: 6px;
+    }
+
+    &-arrow {
+      position: absolute;
+      right: -27px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.accordion__title-smiley path,
+.accordion__title-arrow path{
+  transition: all .2s ease-in-out;
 }
 
 .accordion__item.active .accordion__content {
   height: 175px;
+}
+
+.accordion__item.active .accordion__title-smiley path,
+.accordion__item.active .accordion__title-arrow path {
+ fill: transparent;
+ stroke: transparent;
+}
+
+.accordion__item.active .accordion__title {
+  font-size: 18px;
+  color: $cWhite;
+  transform: translateX(-30px);
 }
 
 .experience__numbers {
@@ -111,6 +116,7 @@
     width: 2px;
     height: 206px;
     background-color: $cProgressBar;
+    overflow: hidden;
 
     &_active {
       width: 2px;
@@ -127,13 +133,13 @@
 
   &-start {
     display: none;
-    padding-top: 10px;
+    padding-top: 5px;
     font-size: 14px;
     color: $cYellow;
   }
 
   &-end {
-    padding-bottom: 20px;
+    padding-bottom: 25px;
     font-size: 10px;
     color: $cLink;
   }
@@ -143,6 +149,9 @@
   display: block;
 }
 
+.br_863 {
+  display: none;
+}
 
 @media (max-width: 1331px) {
   .experience__container {
@@ -203,10 +212,6 @@
       padding-right: 0;
     }
 
-    &__link {
-      padding-right: 35px;
-    }
-
     &__picture {
       height: 453px;
       &::after {
@@ -224,10 +229,6 @@
       padding: 30px 24px 50px;
     }
 
-    &__title {
-      margin-bottom: 12px;
-    }
-
     &__text {
       font-size: 14px;
       line-height: 21px;
@@ -238,15 +239,12 @@
     }
   }
 
-  .experience__link_first {
-    max-width: 70%;
-    background-position: top left;
+  .br_863 {
+    display: block;
+  }
 
-    &::after {
-      top: 24px;
-      right: auto;
-      left: 180px;
-    }
+  .accordion__title_second .accordion__title-arrow{
+    bottom: 6px;
   }
 }
 
@@ -274,18 +272,10 @@
       margin-bottom: 45px;
     }
 
-    &__title {
-      margin-bottom: 8px;
-    }
-
     &__text {
       max-width: 90%;
       font-size: 14px;
       line-height: 21px;
-    }
-
-    &__link {
-      padding-right: 39px;
     }
 
     &__numbers {
@@ -294,7 +284,14 @@
       &-progress {
         height: 2px;
         width: 70%;
+
+        &_active {
+          width: 30%;
+          height: 2px;
+          transition: width .4s ease-in-out;
+        }
       }
+
     }
 
     &__picture {
@@ -311,14 +308,15 @@
     }
   }
 
-  .experience__link_first {
-    max-width: 100%;
-    background-position: top left;
+  .br_863 {
+    display: none;
+  }
 
-    &::after {
-      top: 0;
-      right: 0;
-      left: auto;
+  .accordion__title_second {
+    align-items: center;
+
+    .accordion__title-arrow {
+      bottom: auto;
     }
   }
 
@@ -328,21 +326,19 @@
 }
 
 @media (max-width: 370px) {
-  .experience__link_first {
-    max-width: 90%;
-
-    &::after {
-      top: 24px;
-      right: auto;
-      left: 180px;
-    }
-  }
-
   .experience__text {
     max-width: 100%;
   }
 
   .accordion__item.active .accordion__content {
     height: 140px;
+  }
+
+  .br_863 {
+    display: block;
+  }
+
+  .accordion__title_second .accordion__title-arrow{
+    bottom: 6px;
   }
 }

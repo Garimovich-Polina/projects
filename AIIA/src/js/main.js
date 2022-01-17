@@ -45,6 +45,19 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#progressbar').style.height = "100%"
   });
 
+  const mediaQuery = window.matchMedia('(max-width: 769px)')
+  if (mediaQuery.matches) {
+    document.querySelector('#accordionItem_1').addEventListener('click', function() {
+      document.querySelector('#progressbar').style.width = "33%"
+    });
+    document.querySelector('#accordionItem_2').addEventListener('click', function() {
+      document.querySelector('#progressbar').style.width = "66%"
+    });
+    document.querySelector('#accordionItem_3').addEventListener('click', function() {
+      document.querySelector('#progressbar').style.width = "100%"
+    });
+  }
+
   // tabs for progressbar accordion
   document.querySelectorAll('.accordion__item').forEach(function(tabs) {
     tabs.addEventListener('click', function(event) {

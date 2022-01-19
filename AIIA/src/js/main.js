@@ -35,26 +35,31 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // progressbar accordion
-  document.querySelector('#accordionItem_1').addEventListener('click', function() {
-    document.querySelector('#progressbar').style.height = "33%"
+  let progressbar = document.querySelector('#progressbar');
+  let item1 = document.querySelector('#accordionItem_1');
+  let item2 = document.querySelector('#accordionItem_2');
+  let item3 = document.querySelector('#accordionItem_3');
+
+  item1.addEventListener('click', function() {
+    progressbar.style.height = "33%"
   });
-  document.querySelector('#accordionItem_2').addEventListener('click', function() {
-    document.querySelector('#progressbar').style.height = "66%"
+  item2.addEventListener('click', function() {
+    progressbar.style.height = "66%"
   });
-  document.querySelector('#accordionItem_3').addEventListener('click', function() {
-    document.querySelector('#progressbar').style.height = "100%"
+  item3.addEventListener('click', function() {
+    progressbar.style.height = "100%"
   });
 
   const mediaQuery = window.matchMedia('(max-width: 769px)')
   if (mediaQuery.matches) {
-    document.querySelector('#accordionItem_1').addEventListener('click', function() {
-      document.querySelector('#progressbar').style.width = "33%"
+    item1.addEventListener('click', function() {
+      progressbar.style.width = "33%"
     });
-    document.querySelector('#accordionItem_2').addEventListener('click', function() {
-      document.querySelector('#progressbar').style.width = "66%"
+    item2.addEventListener('click', function() {
+      progressbar.style.width = "66%"
     });
-    document.querySelector('#accordionItem_3').addEventListener('click', function() {
-      document.querySelector('#progressbar').style.width = "100%"
+    item3.addEventListener('click', function() {
+      progressbar.style.width = "100%"
     });
   }
 
